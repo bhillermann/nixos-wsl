@@ -44,16 +44,8 @@
     just
 
     # core languages
-    rustup
-    go
-    lua
-    nodejs
     python3
     typescript
-
-    # rust stuff
-    cargo-cache
-    cargo-expand
 
     # local dev stuf
     mkcert
@@ -122,7 +114,7 @@ in {
     nix-index-database.comma.enable = true;
 
     # FIXME: disable this if you don't want to use the starship prompt
-    starship.enable = true;
+    starship.enable = false;
     starship.settings = {
       aws.disabled = true;
       gcloud.disabled = true;
@@ -160,8 +152,8 @@ in {
         side-by-side = true;
         navigate = true;
       };
-      userEmail = ""; # FIXME: set your git email
-      userName = ""; #FIXME: set your git username
+      userEmail = "bhillermann@gmail.com"; # FIXME: set your git email
+      userName = "bhillermann"; #FIXME: set your git username
       extraConfig = {
         # FIXME: uncomment the next lines if you want to be able to clone private https repos
         # url = {
@@ -223,6 +215,7 @@ in {
         gc = "nix-collect-garbage --delete-old";
         refresh = "source ${config.home.homeDirectory}/.zshrc";
         show_path = "echo $PATH | tr ':' '\n'";
+        rebuild = "sudo nixos-rebuild switch --flake ~/configuration";
 
         # FIXME: add more git aliases here if you want them
         gapa = "git add --patch";
@@ -235,6 +228,7 @@ in {
         gcob = "git checkout -b";
         gcm = "git checkout master";
         gcd = "git checkout develop";
+        gsync = "git push origin main";
 
         pbcopy = "/mnt/c/Windows/System32/clip.exe";
         pbpaste = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -command 'Get-Clipboard'";
