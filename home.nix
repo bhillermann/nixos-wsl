@@ -22,7 +22,6 @@
     htop
     jq
     killall
-    lunarvim
     mosh
     neovim
     procs
@@ -92,7 +91,7 @@ in {
     username = "${username}";
     homeDirectory = "/home/${username}";
 
-    sessionVariables.EDITOR = "lvim";
+    sessionVariables.EDITOR = "nvim";
     # FIXME: set your preferred $SHELL
     sessionVariables.SHELL = "/etc/profiles/per-user/${username}/bin/zsh";
   };
@@ -117,7 +116,7 @@ in {
     nix-index-database.comma.enable = true;
 
     # FIXME: disable this if you don't want to use the starship prompt
-    starship.enable = false;
+    starship.enable = true;
     starship.settings = {
       aws.disabled = true;
       gcloud.disabled = true;
