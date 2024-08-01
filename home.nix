@@ -77,6 +77,9 @@
     statix # nix
     sqlfluff
     tflint
+
+    # GIS stuff
+    gdal
   ];
 in {
   imports = [
@@ -180,7 +183,7 @@ in {
     zsh = {
       enable = true;
       autocd = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
       defaultKeymap = "emacs";
       history.size = 10000;
