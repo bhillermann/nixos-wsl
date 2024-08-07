@@ -106,6 +106,10 @@ in {
       # pkgs.unstable.some-other-package
     ];
 
+  home.file = {
+    Downloads.source = config.lib.file.mkOutOfStoreSymlink "/mnt/c/Users/BrendonHillermann/Downloads";
+  };
+
   # FIXME: if you want to version your LunarVim config, add it to the root of this repo and uncomment the next line
   # home.file.".config/lvim/config.lua".source = ./lvim_config.lua;
 
@@ -129,6 +133,13 @@ in {
       ruby.disabled = true;
       hostname.ssh_only = false;
       hostname.style = "bold green";
+      username = {
+        style_user = "white";
+        style_root = "white";
+        format = "[$user]($style) ";
+        disabled = false;
+        show_always = true;
+      };
     };
 
     fzf.enable = true;
